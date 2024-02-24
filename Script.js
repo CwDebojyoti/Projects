@@ -12,7 +12,3 @@ function ClearDisplay(){
 function Calculate(){
     Display.value = eval(Display.value);
 }
-
-
-
-
