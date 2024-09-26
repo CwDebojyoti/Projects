@@ -18,14 +18,15 @@ from datetime import date
 from forms import NewPost, RegisterForm, LoginForm, CommentForm
 from functools import wraps
 from flask import abort
+import os
 
+# Email and password for SMTPLIB:
 my_email = "cwdebojyoti@gmail.com"
-password = "punxfhhdjnmnlghq"
-
+password = os.environ.get("SMTP_PASS")
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = os.environ.get("APP_SEC_KEY")
 Bootstrap5(app)
 ckeditor = CKEditor(app)
 
